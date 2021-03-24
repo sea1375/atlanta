@@ -170,19 +170,15 @@
                   id="menu-item-21"
                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-21"
                 >
-                  <nuxt-link to="/about">Order</nuxt-link>
-                  <ul class="sub-menu">
-                    <li
-                      class="menu-item menu-item-type-post_type menu-item-object-page"
-                    >
-                      <nuxt-link to="/about">Menu</nuxt-link>
-                    </li>
-                    <li
-                      class="menu-item menu-item-type-post_type menu-item-object-page"
-                    >
-                      <nuxt-link to="/gallery">Custom menu</nuxt-link>
-                    </li>
-                  </ul>
+                  <nuxt-link to="/wizard">Weekly Menu</nuxt-link>
+                  
+                </li>
+                <li
+                  id="menu-item-21"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-21"
+                >
+                  <nuxt-link to="/delivery-and-pickup">Delivery & Pickup</nuxt-link>
+                  
                 </li>
                 <li
                   v-if="this.$store.state.logedIn === true"
@@ -212,13 +208,7 @@
                     >
                       <nuxt-link to="/gallery">Gallery</nuxt-link>
                     </li>
-                    <li
-                      class="menu-item menu-item-type-post_type menu-item-object-page"
-                    >
-                      <nuxt-link to="/delivery-and-pickup"
-                        >Delivery & Pickup</nuxt-link
-                      >
-                    </li>
+                    
                     <li
                       class="menu-item menu-item-type-post_type menu-item-object-page"
                     >
@@ -233,34 +223,6 @@
                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-21"
                 >
                   <nuxt-link to>Settings</nuxt-link>
-                </li>
-                <li
-                  id="menu-item-21"
-                  :class="{
-                    'menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-21': true,
-                    'border-right': this.$store.state.logedIn === true,
-                  }"
-                >
-                  <nuxt-link to>Rewards & Referrals</nuxt-link>
-                  <ul class="sub-menu">
-                    <li
-                      class="menu-item menu-item-type-post_type menu-item-object-page"
-                    >
-                      <nuxt-link to="/rewards">Rewards</nuxt-link>
-                    </li>
-                    <li
-                      class="menu-item menu-item-type-post_type menu-item-object-page"
-                    >
-                      <nuxt-link to="/referrals">Referrals</nuxt-link>
-                    </li>
-                    <li
-                      class="menu-item menu-item-type-post_type menu-item-object-page"
-                    >
-                      <nuxt-link to="/gift-certificate"
-                        >Gift certificate</nuxt-link
-                      >
-                    </li>
-                  </ul>
                 </li>
                 <li v-if="this.$store.state.logedIn === false">
                   <nuxt-link
