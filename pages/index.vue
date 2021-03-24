@@ -94,6 +94,7 @@
                     </div>
                   </div>
                 </div>
+                <!--
                 <div class="bg-white">
                   <div class="container">
                     <h2 style="text-align: center;">Let’s Get Cooking</h2>
@@ -141,6 +142,8 @@
                     </p>
                   </div>
                 </div>
+
+                -->
               </div>
             </article>
           </div>
@@ -213,6 +216,6 @@ export default {
 }
 
 .icon-section {
-  background-color: #F6F9FC;
+  background-color: #F6F9FC
 }
 </style>

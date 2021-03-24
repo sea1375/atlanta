@@ -76,7 +76,7 @@
     </button>
     <button
       id="nxt-stp"
-      class="ms-button-wide ms-filled-button meal-button ms-button–arrow ms-button-arrow-right"
+      class="ms-button-wide ms-filled-button meal-button ms-button–arrow ms-button-arrow-right ml-40"
       @click="nextStep"
     >
       Proceed
@@ -195,7 +195,7 @@ p {
 
 .meal-selector {
   width: 516px;
-  padding-left: 16px;
+  padding-left: 24px;
   padding-right: 16px;
   padding-top: 40px;
   padding-bottom: 24px;
@@ -228,7 +228,7 @@ p {
 
 .other-option {
   margin-top: 35px;
-  margin-left: 12px;
+  //margin-left: 12px;
 }
 
 .meal-btn {
@@ -253,14 +253,14 @@ p {
 
 .wide-btn {
   width: 145px;
-  margin-left: -4px;
+  //margin-left: -4px;
 }
 
 .button-row {
   width: max-content;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  //margin-left: auto;
+  //margin-right: auto;
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -314,6 +314,14 @@ p {
 #second-p {
   font-weight: bold;
   transition: 250ms ease;
+}
+
+.ms-button-wide {
+  width: 234px;
+}
+
+.ms-button-wide.ml-40 {
+  margin-left: 40px;
 }
 
 @media only screen and (max-width: 1282px) {
@@ -404,5 +412,7 @@ p {
   .wide-btn {
     margin-left: 0px;
   }
+
+  
 }
 </style>
