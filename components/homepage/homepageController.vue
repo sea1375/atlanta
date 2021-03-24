@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="img-wrapp">
       <img
-        src="https://atlantamealprep.com/wp-content/uploads/2020/02/AMP-2019-066.jpg"
+        src="~assets/food.png"
         class="half-divs hl-img desktop-hidden"
       />
       <div class="whiter"></div>
@@ -13,7 +13,7 @@
       <select-meal v-else-if="this.$store.state.wizard.step === 3" />
     </div>
     <img
-      src="https://atlantamealprep.com/wp-content/uploads/2020/02/AMP-2019-066.jpg"
+      src="~assets/food.png"
       class="half-divs hl-img mobile-hidden"
     />
   </div>

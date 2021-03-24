@@ -261,7 +261,7 @@
       </div>
     </header>
     <Nuxt />
-    <newsletter />
+    <signInComponent />
     <footer id="colophon" class="site-footer" role="contentinfo">
       <div class="container row">
         <div class="col-md-2">
@@ -370,11 +370,13 @@
 import Newsletter from './../components/newsletters.vue'
 import mobileLeftPanel from './../components/wizard/leftPanel.vue'
 import { createOrLoadCart } from './../components/apiFunctions.js'
+import signInComponent from './../components/wizard/components/signInComponent'
 
 export default {
   components: {
     Newsletter,
     mobileLeftPanel,
+    signInComponent
   },
   data() {
     return {
@@ -560,6 +562,10 @@ export default {
 
 .border-right {
   border-right: 0.25px solid #3c3c3c;
+}
+
+.icon-section {
+  background-color: ##F6F9FC;
 }
 
 @media only screen and (max-width: 1282px) {

@@ -9,7 +9,7 @@
             <article id="post-2" class="post-2 page type-page status-publish">
               <div class="entry-content">
                 <homepage-controller />
-                <div class="bg-white alt-color row">
+                <div class="bg-white alt-color row icon-section">
                   <div class="container">
                     <div class="col-md-4">
                       <p>
@@ -210,5 +210,9 @@ export default {
 
 .features-p {
   text-align: left !important;
+}
+
+.icon-section {
+  background-color: #F6F9FC;
 }
 </style>
