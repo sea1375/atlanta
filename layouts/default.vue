@@ -476,11 +476,15 @@ export default {
       })
     },
     async loadMealMenus() {
+      /***
       const menus = await this.$axios.$get(
         this.$store.state.apiConfiguration.baseUrl +
         this.$store.state.apiConfiguration.urlMenus
       )
-
+      ***/
+      const menus = [
+      
+      ]
       this.$store.commit('wizard/setMealMenus', menus)
     },
   },

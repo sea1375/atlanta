@@ -46,11 +46,11 @@
           <button
             class="ms-button-wide ms-outlined-button meal-button txt-center"
             @click="resetFilters()"
-          >Clean all</button>
+          >CLEAN ALL</button>
           <button
             class="ms-button-wide ms-filled-button meal-button less-padding"
             @click="save()"
-          >Show all results</button>
+          >SHOW ALL RESULTS</button>
         </div>
       </div>
     </div>
@@ -242,7 +242,7 @@ h2 {
 
   position: absolute;
   left: 40px;
-  top: 20px;
+  top: 30px;
   margin-bottom: 0px;
 }
 
@@ -254,7 +254,7 @@ h2 {
 }
 
 .top-spacer {
-  margin-top: 16px;
+  margin-top: 36px;
 }
 
 /* The switch - the box around the slider */
@@ -343,10 +343,11 @@ input:checked + .slider:before {
   color: #3c3c3c;
   display: inline-block;
   margin-bottom: 0px;
+  margin-left: 10px;
 }
 
 .less-padding {
-  padding-left: 36px;
-  padding-right: 36px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 </style>

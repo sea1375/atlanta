@@ -236,11 +236,14 @@ h2 {
   font-family: Nunito;
   font-style: normal;
   font-weight: 800;
-  font-size: 44px;
+  font-size: 38px;
   line-height: 54px;
   max-width: 516px;
   color: #3c3c3c;
   margin-top: 0;
+  letter-spacing: -2px;
+  margin-right: 20px;
+  max-width: 430px
 }
 
 .little-header {
@@ -647,8 +650,8 @@ p {
 }
 
 #second-p-pp {
-  font-weight: bold;
   transition: 250ms ease;
+  font-size: 16px;
 }
 
 @media only screen and (max-width: 1282px) {
