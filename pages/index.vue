@@ -18,7 +18,9 @@
                           src="./../assets/seasonal_ingredients.png"
                         />
                       </p>
-                      <h3 class="features-h3" style="text-align: center;">Seasonal Ingredients</h3>
+                      <h3 class="features-h3" style="text-align: center">
+                        Seasonal Ingredients
+                      </h3>
                       <p class="features-p">
                         Our menus are developed from seasonal ingredients and
                         our recipes are constantly evolving—giving you variety
@@ -33,7 +35,9 @@
                           srcset="./../assets/something_for_everyone.png"
                         />
                       </p>
-                      <h3 class="features-h3" style="text-align: center;">Something for Everyone</h3>
+                      <h3 class="features-h3" style="text-align: center">
+                        Something for Everyone
+                      </h3>
                       <p class="features-p">
                         We offer options to fit your needs—Paleo, Gluten-Free,
                         1200 Calorie, High Protein Diet, Vegan/Vegetarian, Keto,
@@ -47,7 +51,9 @@
                           src="./../assets/free_delivery.png"
                         />
                       </p>
-                      <h3 class="features-h3" style="text-align: center;">Free Delivery</h3>
+                      <h3 class="features-h3" style="text-align: center">
+                        Free Delivery
+                      </h3>
                       <p class="features-p">
                         Each of our weekly plans come with complimentary
                         delivery or pickup inside the Atlanta Perimeter.
@@ -57,7 +63,7 @@
                 </div>
                 <div class="bg-pattern">
                   <div>
-                    <h2 style="text-align: center;">How It Works</h2>
+                    <h2 style="text-align: center">How It Works</h2>
                     <div class="process-graphic">
                       <div class="process-item number">
                         <img
@@ -84,11 +90,19 @@
                         <p>Make your secure payment</p>
                       </div>
                       <div class="process-item delivery">
-                        <img src="./../assets/flow_04.png" class="flow-img-small" alt="" />
+                        <img
+                          src="./../assets/flow_04.png"
+                          class="flow-img-small"
+                          alt=""
+                        />
                         <p>Receive free delivery</p>
                       </div>
                       <div class="process-item enjoy">
-                        <img src="./../assets/flow_05.png" class="flow-img" alt="" />
+                        <img
+                          src="./../assets/flow_05.png"
+                          class="flow-img"
+                          alt=""
+                        />
                         <p>Heat &amp; enjoy at your convenience</p>
                       </div>
                     </div>
@@ -216,6 +230,6 @@ export default {
 }
 
 .icon-section {
-  background-color: #F6F9FC
+  background-color: #f6f9fc;
 }
 </style>

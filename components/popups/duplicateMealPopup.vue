@@ -46,7 +46,7 @@
         <div
           v-if="selection"
           class="inside-content-wrapper"
-          style="margin-top: 12px;"
+          style="margin-top: 12px"
         >
           <p class="question-p" style="max-width: inherit">
             Click on items you want to duplicate

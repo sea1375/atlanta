@@ -171,14 +171,14 @@
                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-21"
                 >
                   <nuxt-link to="/wizard">Weekly Menu</nuxt-link>
-                  
                 </li>
                 <li
                   id="menu-item-21"
                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-21"
                 >
-                  <nuxt-link to="/delivery-and-pickup">Delivery & Pickup</nuxt-link>
-                  
+                  <nuxt-link to="/delivery-and-pickup"
+                    >Delivery & Pickup</nuxt-link
+                  >
                 </li>
                 <li
                   v-if="this.$store.state.logedIn === true"
@@ -217,9 +217,9 @@
                     </li>
                   </ul>
                 </li>
-                
+
                 <li
-                v-if="this.$store.state.logedIn === true"
+                  v-if="this.$store.state.logedIn === true"
                   id="menu-item-21"
                   :class="{
                     'menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-21': true,
@@ -247,12 +247,11 @@
                     </li>
                   </ul>
                 </li>
-                <li v-if="this.$store.state.logedIn === false">
-                  <nuxt-link
-                    class="menu-item menu-item-type-post_type menu-item-object-page nav-green-no-hover"
-                    to="/register"
-                    >Login</nuxt-link
-                  >
+                <li
+                  v-if="this.$store.state.logedIn === false"
+                  @click="showAuth()"
+                >
+                  <a style="cursor: pointer">Login</a>
                 </li>
               </ul>
             </div>
@@ -349,10 +348,12 @@
           </div>
         </div>
       </div>
-      <a class="back-to-top scrollme" href="#top" style="display: none;">
+      <a class="back-to-top scrollme" href="#top" style="display: none">
         <i class="fa fa-arrow-up fa-lg" aria-hidden="true"></i>
       </a>
     </footer>
+    <auth-popup v-if="showAuthPopup" />
+
     <script>
       window.fbAsyncInit = function () {
         FB.init({
@@ -371,18 +372,21 @@ import Newsletter from './../components/newsletters.vue'
 import mobileLeftPanel from './../components/wizard/leftPanel.vue'
 import { createOrLoadCart } from './../components/apiFunctions.js'
 import signInComponent from './../components/wizard/components/signInComponent'
+import AuthPopup from './../components/popups/authPopup.vue'
 
 export default {
   components: {
     Newsletter,
     mobileLeftPanel,
-    signInComponent
+    signInComponent,
+    AuthPopup,
   },
   data() {
     return {
       navBack: false,
       navBarShow: true,
       mobileLeftPanel: false,
+      showAuthPopup: false,
     }
   },
   created() {
@@ -394,6 +398,12 @@ export default {
     })
     $nuxt.$on('nav-bar-toggle', (toggleBool) => {
       self.navBarShow = toggleBool
+    })
+    $nuxt.$on('show-auth-popup', () => {
+      this.showAuthPopup = true
+    })
+    $nuxt.$on('close-auth-popup', () => {
+      this.showAuthPopup = false
     })
   },
   mounted() {
@@ -437,6 +447,10 @@ export default {
       if (window.innerWidth <= 1282) {
         this.mobileLeftPanel = true
       }
+    },
+    showAuth() {
+      console.log('showAuth')
+      $nuxt.$emit('show-auth-popup')
     },
     async login() {
       await this.$axios.$post(
@@ -482,9 +496,7 @@ export default {
         this.$store.state.apiConfiguration.urlMenus
       )
       ***/
-      const menus = [
-      
-      ]
+      const menus = []
       this.$store.commit('wizard/setMealMenus', menus)
     },
   },
@@ -569,7 +581,7 @@ export default {
 }
 
 .icon-section {
-  background-color: ##F6F9FC;
+  background-color: ##f6f9fc;
 }
 
 @media only screen and (max-width: 1282px) {

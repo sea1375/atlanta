@@ -435,9 +435,11 @@ export default {
     },
     login() {
       $nuxt.$emit('mobile-menu-toggle')
-      this.$router.push({
-        path: '/register',
-      })
+      // this.$router.push({
+      //   path: '/register',
+      // })
+
+      $nuxt.$emit('show-auth-popup')
     },
     hideMobile() {
       if (window.innerWidth <= 1282) {
@@ -586,7 +588,7 @@ export default {
   font-weight: bold;
   font-size: 12px;
   line-height: 16px;
-  color: #A4B6C0;
+  color: #a4b6c0;
 }
 
 .bottom-info a {
@@ -595,7 +597,7 @@ export default {
   font-weight: bold;
   font-size: 12px;
   line-height: 16px;
-  color: #A4B6C0;
+  color: #a4b6c0;
 }
 
 .left-column-logo {
