@@ -208,7 +208,6 @@
                     >
                       <nuxt-link to="/gallery">Gallery</nuxt-link>
                     </li>
-                    
                     <li
                       class="menu-item menu-item-type-post_type menu-item-object-page"
                     >
@@ -218,11 +217,35 @@
                     </li>
                   </ul>
                 </li>
+                
                 <li
-                  v-if="this.$store.state.logedIn === true"
-                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-21"
+                v-if="this.$store.state.logedIn === true"
+                  id="menu-item-21"
+                  :class="{
+                    'menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-21': true,
+                    'border-right': this.$store.state.logedIn === true,
+                  }"
                 >
-                  <nuxt-link to>Settings</nuxt-link>
+                  <nuxt-link to>Rewards & Referrals</nuxt-link>
+                  <ul class="sub-menu">
+                    <li
+                      class="menu-item menu-item-type-post_type menu-item-object-page"
+                    >
+                      <nuxt-link to="/rewards">Rewards</nuxt-link>
+                    </li>
+                    <li
+                      class="menu-item menu-item-type-post_type menu-item-object-page"
+                    >
+                      <nuxt-link to="/referrals">Referrals</nuxt-link>
+                    </li>
+                    <li
+                      class="menu-item menu-item-type-post_type menu-item-object-page"
+                    >
+                      <nuxt-link to="/gift-certificate"
+                        >Gift certificate</nuxt-link
+                      >
+                    </li>
+                  </ul>
                 </li>
                 <li v-if="this.$store.state.logedIn === false">
                   <nuxt-link
