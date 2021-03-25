@@ -260,7 +260,7 @@
       </div>
     </header>
     <Nuxt />
-    <signInComponent />
+    <Newsletters />
     <footer id="colophon" class="site-footer" role="contentinfo">
       <div class="container row">
         <div class="col-md-2">
@@ -496,7 +496,36 @@ export default {
         this.$store.state.apiConfiguration.urlMenus
       )
       ***/
-      const menus = []
+      const menus = [
+        {
+          meal_menu_name: 'Diet mix',
+          description: 'This diet is a combination of our menu offerings',
+          image: '',
+        },
+        {
+          meal_menu_name: 'Paleo',
+          description:
+            'This diet omits dairy, sugar, butter, rice, grains & white potatoes, legumes, soy.',
+          image: '',
+        },
+        {
+          meal_menu_name: 'W30',
+          description:
+            'This is a 30-day reset diet that omits legumes, dairy & sweeteners',
+          image: '',
+        },
+        {
+          meal_menu_name: 'Keto',
+          description:
+            'This is a low carb diet that omits rice, grains, legumes, potatoes, fruits.',
+          image: '',
+        },
+        {
+          meal_menu_name: 'Vegan',
+          description: 'This diet omits all animal products of any kind.',
+          image: '',
+        },
+      ]
       this.$store.commit('wizard/setMealMenus', menus)
     },
   },

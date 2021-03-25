@@ -1,10 +1,7 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" style="padding-bottom: 50px">
     <div class="img-wrapp">
-      <img
-        src="~assets/food.png"
-        class="half-divs hl-img desktop-hidden"
-      />
+      <img src="~assets/food.png" class="half-divs hl-img desktop-hidden" />
       <div class="whiter"></div>
     </div>
     <div class="half-divs">
@@ -12,10 +9,7 @@
       <preselected-menus v-if="this.$store.state.wizard.step === 2" />
       <select-meal v-else-if="this.$store.state.wizard.step === 3" />
     </div>
-    <img
-      src="~assets/food.png"
-      class="half-divs hl-img mobile-hidden"
-    />
+    <img src="~assets/food.png" class="half-divs hl-img mobile-hidden" />
   </div>
 </template>
 
