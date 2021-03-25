@@ -2,7 +2,7 @@
   <div>
     <section
       class="call-to-action"
-      style="background-image: url(/_nuxt/assets/sign_up_background.jpg)"
+      :style="{ backgroundImage: `url(${imgBackground})` }"
     >
       <div class="container narrow">
         <h2>Sign Up For Updates, Events, &amp; Recipes!</h2>
@@ -45,7 +45,15 @@
 </template>
 
 <script>
-export default {}
+import backgroundImage from './../assets/sign_up_background.jpg'
+
+export default {
+  data() {
+    return {
+      imgBackground: backgroundImage,
+    }
+  },
+}
 </script>
 
 <style scoped>
