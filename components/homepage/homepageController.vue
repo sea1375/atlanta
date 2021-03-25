@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" style="padding-bottom: 50px">
+  <div class="wrapper" style="">
     <div class="img-wrapp">
       <img src="~assets/food.png" class="half-divs hl-img desktop-hidden" />
       <div class="whiter"></div>
@@ -38,7 +38,6 @@ export default {
 .wrapper {
   width: 100%;
   height: 75vh;
-  margin-bottom: 40px;
 }
 
 .half-divs {

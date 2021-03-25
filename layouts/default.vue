@@ -500,7 +500,7 @@ export default {
         {
           meal_menu_name: 'Diet mix',
           description: 'This diet is a combination of our menu offerings',
-          image: '',
+          image: 'paleto_diet.png',
         },
         {
           meal_menu_name: 'Paleo',
