@@ -3,7 +3,9 @@
     <h2>How many meals would you like to order?</h2>
     <div class="meal-selector">
       <p class="little-header"><strong>Enter the amount of meals</strong></p>
-      <p id="second-p" class="mobile-small">5 is a minimum amount you can order</p>
+      <p id="second-p" class="mobile-small">
+        5 is a minimum amount you can order
+      </p>
       <div class="ext-input-wrp meal-input">
         <input
           id="meal-count"
@@ -176,9 +178,9 @@ p {
 
 .choose-homepage {
   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  /* top: 50%; */
+  left: 10%;
+  /* transform: translate(-50%, -50%); */
   width: 80%;
   max-width: 580px;
 }
@@ -403,6 +405,7 @@ p {
     width: 100%;
     padding-top: 8px;
     padding-bottom: 8px;
+    margin-left: 0px !important;
   }
 
   .button-row {
@@ -412,7 +415,5 @@ p {
   .wide-btn {
     margin-left: 0px;
   }
-
-  
 }
 </style>
