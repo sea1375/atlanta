@@ -209,6 +209,7 @@ export default {
   /* transform: translate(-50%, -50%); */
   width: 80%;
   max-width: 580px;
+  padding-top: 150px;
 }
 
 .choose-homepage h2 {
@@ -247,6 +248,7 @@ export default {
     margin-right: auto;
     margin-top: 35vh;
     z-index: 20;
+    padding-top: 0;
   }
 
   .text-wrapper p:nth-child(2) {
