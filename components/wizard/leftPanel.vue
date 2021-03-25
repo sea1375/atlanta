@@ -89,7 +89,12 @@
         </svg>
         <nuxt-link to>Order and menu</nuxt-link>
       </li>
-      <li id="link-order-history" class="left-panel-nav" @click="openView(3)" v-if="this.$store.state.logedIn === true">
+      <li
+        id="link-order-history"
+        class="left-panel-nav"
+        @click="openView(3)"
+        v-if="this.$store.state.logedIn === true"
+      >
         <svg
           width="24"
           height="24"
@@ -133,7 +138,7 @@
           viewBox="0 0 18 18"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          style="margin-left: 6px; transform: translateY(0px) translateX(-4px);"
+          style="margin-left: 6px; transform: translateY(0px) translateX(-4px)"
         >
           <path
             fill-rule="evenodd"
@@ -144,7 +149,12 @@
         </svg>
         <nuxt-link to>Weekly menu</nuxt-link>
       </li>
-      <li id="link-profile" class="left-panel-nav" @click="openView(2)" v-if="this.$store.state.logedIn === true">
+      <li
+        id="link-profile"
+        class="left-panel-nav"
+        @click="openView(2)"
+        v-if="this.$store.state.logedIn === true"
+      >
         <svg
           width="24"
           height="24"
@@ -177,7 +187,12 @@
         </svg>
         <nuxt-link to>Profile</nuxt-link>
       </li>
-      <li id="link-rewards" class="left-panel-nav" @click="openView(4)">
+      <li
+        id="link-rewards"
+        class="left-panel-nav"
+        @click="openView(4)"
+        v-if="this.$store.state.logedIn === true"
+      >
         <svg
           width="24"
           height="24"
@@ -221,7 +236,7 @@
           viewBox="0 0 18 18"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          style="margin-left: 6px;transform: translateY(0px) translateX(-4px);"
+          style="margin-left: 6px; transform: translateY(0px) translateX(-4px)"
         >
           <path
             fill-rule="evenodd"
@@ -232,7 +247,7 @@
         </svg>
         <nuxt-link to>Delivery & Pickup</nuxt-link>
       </li>
-      
+
       <li class="left-panel-nav" @click="toggleAboutContent()">
         <svg
           width="24"
@@ -275,24 +290,14 @@
           class="show-about-content"
           @click="hideMobile()"
         >
-          <nuxt-link to="/contact">Contact & Policy</nuxt-link>
+          <!-- <nuxt-link to="/contact">Contact & Policy</nuxt-link> -->
           <nuxt-link to="/gallery">Gallery & Reviews</nuxt-link>
-          <nuxt-link to="/delivery-and-pickup">Delivery & Pickup</nuxt-link>
+          <!-- <nuxt-link to="/delivery-and-pickup">Delivery & Pickup</nuxt-link> -->
           <nuxt-link to="/references">Partners & References</nuxt-link>
         </div>
       </li>
     </ul>
     <div class="bottom-part">
-      <p class="bottom-info">
-        {{ this.$store.state.generalInformation.companyNumber }}</br>
-        <a
-          :href="
-                    'mailto:' +
-                    this.$store.state.generalInformation.companyEmail
-                  "
-        >{{ this.$store.state.generalInformation.companyEmail }}</a
-        >
-      </p>
       <span v-if="this.$store.state.logedIn === true">
         <div class="small-spacer"></div>
         <p class="wizard-logout" @click="logOut">
@@ -374,8 +379,6 @@
           Log In
         </p>
       </span>
-
-      
     </div>
   </div>
 </template>
@@ -557,6 +560,8 @@ export default {
   bottom: 0px;
   width: max-content;
   margin-left: 16px;
+  /* width: 100%;
+  padding-right: 40px; */
 }
 
 .wizard-logout svg {
@@ -754,7 +759,7 @@ export default {
     margin-right: 0px;
   }
   .small-spacer {
-    width: calc(100% - 40px);
+    width: calc(100vw - 40px);
   }
 
   .close-button {

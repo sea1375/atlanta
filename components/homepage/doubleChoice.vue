@@ -1,8 +1,6 @@
 <template>
   <div class="choose-homepage">
-    <h2>
-      Fresh, local, & healthy meals delivered to your door.
-    </h2>
+    <h2>Fresh, local, & healthy meals delivered to your door.</h2>
     <div>
       <p class="mobile-hidden">Select how you want to order.</p>
       <div class="long-btn-wide" @click="nextStep(3)">
@@ -134,7 +132,7 @@ export default {
 .select-meal-img img {
   width: 45px !important;
   height: 45px !important;
-  max-width: max-content !important;
+  /* max-width: max-content !important; */
 }
 
 .select-menu-img img {
