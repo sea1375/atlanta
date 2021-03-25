@@ -37,7 +37,7 @@ export default {
 <style scoped>
 .wrapper {
   width: 100%;
-  height: 75vh;
+  height: inherit;
 }
 
 .half-divs {
@@ -60,7 +60,7 @@ export default {
 
 @media only screen and (max-height: 800px) {
   .wrapper {
-    height: 90vh;
+    height: inherit;
   }
 }
 
