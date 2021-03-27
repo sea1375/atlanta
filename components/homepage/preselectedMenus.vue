@@ -154,7 +154,7 @@ export default {
   font-size: 44px;
   line-height: 54px;
   color: #3c3c3c;
-  margin-bottom: 16px;
+  margin-bottom: 0px;
 }
 
 @media only screen and (max-width: 1282px) {
