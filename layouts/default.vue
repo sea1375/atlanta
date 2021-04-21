@@ -170,19 +170,15 @@
                   id="menu-item-21"
                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-21"
                 >
-                  <nuxt-link to="/about">Order</nuxt-link>
-                  <ul class="sub-menu">
-                    <li
-                      class="menu-item menu-item-type-post_type menu-item-object-page"
-                    >
-                      <nuxt-link to="/about">Menu</nuxt-link>
-                    </li>
-                    <li
-                      class="menu-item menu-item-type-post_type menu-item-object-page"
-                    >
-                      <nuxt-link to="/gallery">Custom menu</nuxt-link>
-                    </li>
-                  </ul>
+                  <nuxt-link to="/wizard">Weekly Menu</nuxt-link>
+                </li>
+                <li
+                  id="menu-item-21"
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-21"
+                >
+                  <nuxt-link to="/delivery-and-pickup"
+                    >Delivery & Pickup</nuxt-link
+                  >
                 </li>
                 <li
                   v-if="this.$store.state.logedIn === true"
@@ -215,26 +211,15 @@
                     <li
                       class="menu-item menu-item-type-post_type menu-item-object-page"
                     >
-                      <nuxt-link to="/delivery-and-pickup"
-                        >Delivery & Pickup</nuxt-link
-                      >
-                    </li>
-                    <li
-                      class="menu-item menu-item-type-post_type menu-item-object-page"
-                    >
                       <nuxt-link to="/references"
                         >Partners & References</nuxt-link
                       >
                     </li>
                   </ul>
                 </li>
+
                 <li
                   v-if="this.$store.state.logedIn === true"
-                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-21"
-                >
-                  <nuxt-link to>Settings</nuxt-link>
-                </li>
-                <li
                   id="menu-item-21"
                   :class="{
                     'menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-21': true,
@@ -262,12 +247,11 @@
                     </li>
                   </ul>
                 </li>
-                <li v-if="this.$store.state.logedIn === false">
-                  <nuxt-link
-                    class="menu-item menu-item-type-post_type menu-item-object-page nav-green-no-hover"
-                    to="/register"
-                    >Login</nuxt-link
-                  >
+                <li
+                  v-if="this.$store.state.logedIn === false"
+                  @click="showAuth()"
+                >
+                  <a style="cursor: pointer">Login</a>
                 </li>
               </ul>
             </div>
@@ -276,7 +260,7 @@
       </div>
     </header>
     <Nuxt />
-    <newsletter />
+    <Newsletters />
     <footer id="colophon" class="site-footer" role="contentinfo">
       <div class="container row">
         <div class="col-md-2">
@@ -364,10 +348,12 @@
           </div>
         </div>
       </div>
-      <a class="back-to-top scrollme" href="#top" style="display: none;">
+      <a class="back-to-top scrollme" href="#top" style="display: none">
         <i class="fa fa-arrow-up fa-lg" aria-hidden="true"></i>
       </a>
     </footer>
+    <auth-popup v-if="showAuthPopup" />
+
     <script>
       window.fbAsyncInit = function () {
         FB.init({
@@ -385,17 +371,22 @@
 import Newsletter from './../components/newsletters.vue'
 import mobileLeftPanel from './../components/wizard/leftPanel.vue'
 import { createOrLoadCart } from './../components/apiFunctions.js'
+import signInComponent from './../components/wizard/components/signInComponent'
+import AuthPopup from './../components/popups/authPopup.vue'
 
 export default {
   components: {
     Newsletter,
     mobileLeftPanel,
+    signInComponent,
+    AuthPopup,
   },
   data() {
     return {
       navBack: false,
       navBarShow: true,
       mobileLeftPanel: false,
+      showAuthPopup: false,
     }
   },
   created() {
@@ -407,6 +398,12 @@ export default {
     })
     $nuxt.$on('nav-bar-toggle', (toggleBool) => {
       self.navBarShow = toggleBool
+    })
+    $nuxt.$on('show-auth-popup', () => {
+      this.showAuthPopup = true
+    })
+    $nuxt.$on('close-auth-popup', () => {
+      this.showAuthPopup = false
     })
   },
   mounted() {
@@ -451,6 +448,10 @@ export default {
         this.mobileLeftPanel = true
       }
     },
+    showAuth() {
+      console.log('showAuth')
+      $nuxt.$emit('show-auth-popup')
+    },
     async login() {
       await this.$axios.$post(
         this.$store.state.apiConfiguration.baseUrl +
@@ -489,11 +490,42 @@ export default {
       })
     },
     async loadMealMenus() {
+      /***
       const menus = await this.$axios.$get(
         this.$store.state.apiConfiguration.baseUrl +
         this.$store.state.apiConfiguration.urlMenus
       )
-
+      ***/
+      const menus = [
+        {
+          meal_menu_name: 'Diet mix',
+          description: 'This diet is a combination of our menu offerings',
+          image: 'paleto_diet.png',
+        },
+        {
+          meal_menu_name: 'Paleo',
+          description:
+            'This diet omits dairy, sugar, butter, rice, grains & white potatoes, legumes, soy.',
+          image: '',
+        },
+        {
+          meal_menu_name: 'W30',
+          description:
+            'This is a 30-day reset diet that omits legumes, dairy & sweeteners',
+          image: '',
+        },
+        {
+          meal_menu_name: 'Keto',
+          description:
+            'This is a low carb diet that omits rice, grains, legumes, potatoes, fruits.',
+          image: '',
+        },
+        {
+          meal_menu_name: 'Vegan',
+          description: 'This diet omits all animal products of any kind.',
+          image: '',
+        },
+      ]
       this.$store.commit('wizard/setMealMenus', menus)
     },
   },
@@ -575,6 +607,10 @@ export default {
 
 .border-right {
   border-right: 0.25px solid #3c3c3c;
+}
+
+.icon-section {
+  background-color: ##f6f9fc;
 }
 
 @media only screen and (max-width: 1282px) {

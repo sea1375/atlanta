@@ -56,7 +56,7 @@ export default {
   color: #3c3c3c;
   height: 48px;
   caret-color: #34bc89;
-  width: 400px;
+  width: 80%;
 }
 
 .sign-up-input-inline:placeholder-shown {
@@ -70,7 +70,7 @@ export default {
 }
 
 .sign-up-input-inline:focus {
-  border: 2px solid #a4B6c0;
+  border: 2px solid #a4b6c0;
 }
 
 .sign-up-input {

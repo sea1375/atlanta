@@ -3,7 +3,9 @@
     <h2>How many meals would you like to order?</h2>
     <div class="meal-selector">
       <p class="little-header"><strong>Enter the amount of meals</strong></p>
-      <p id="second-p" class="mobile-small">5 is a minimum amount you can order</p>
+      <p id="second-p" class="mobile-small">
+        5 is a minimum amount you can order
+      </p>
       <div class="ext-input-wrp meal-input">
         <input
           id="meal-count"
@@ -76,7 +78,7 @@
     </button>
     <button
       id="nxt-stp"
-      class="ms-button-wide ms-filled-button meal-button ms-button–arrow ms-button-arrow-right"
+      class="ms-button-wide ms-filled-button meal-button ms-button–arrow ms-button-arrow-right ml-40"
       @click="nextStep"
     >
       Proceed
@@ -176,9 +178,9 @@ p {
 
 .choose-homepage {
   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  /* top: 50%; */
+  left: 10%;
+  /* transform: translate(-50%, -50%); */
   width: 80%;
   max-width: 580px;
 }
@@ -195,7 +197,7 @@ p {
 
 .meal-selector {
   width: 516px;
-  padding-left: 16px;
+  padding-left: 24px;
   padding-right: 16px;
   padding-top: 40px;
   padding-bottom: 24px;
@@ -228,7 +230,7 @@ p {
 
 .other-option {
   margin-top: 35px;
-  margin-left: 12px;
+  //margin-left: 12px;
 }
 
 .meal-btn {
@@ -253,14 +255,14 @@ p {
 
 .wide-btn {
   width: 145px;
-  margin-left: -4px;
+  //margin-left: -4px;
 }
 
 .button-row {
   width: max-content;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  //margin-left: auto;
+  //margin-right: auto;
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -314,6 +316,14 @@ p {
 #second-p {
   font-weight: bold;
   transition: 250ms ease;
+}
+
+.ms-button-wide {
+  width: 234px;
+}
+
+.ms-button-wide.ml-40 {
+  margin-left: 40px;
 }
 
 @media only screen and (max-width: 1282px) {
@@ -395,6 +405,7 @@ p {
     width: 100%;
     padding-top: 8px;
     padding-bottom: 8px;
+    margin-left: 0px !important;
   }
 
   .button-row {

@@ -46,9 +46,9 @@
         <div
           v-if="selection"
           class="inside-content-wrapper"
-          style="margin-top: 12px;"
+          style="margin-top: 12px"
         >
-          <p class="question-p">
+          <p class="question-p" style="max-width: inherit">
             Click on items you want to duplicate
           </p>
 
@@ -84,6 +84,14 @@
           >
             {{ secondDishObject.name }}
           </div>
+
+          <button
+            class="ms-button-wide ms-outlined-button meal-button txt-center"
+            @click="close()"
+            style="width: 100%"
+          >
+            DESELECT ALL
+          </button>
         </div>
 
         <div class="button-row">
@@ -91,14 +99,14 @@
             class="ms-button-wide ms-outlined-button meal-button txt-center"
             @click="close()"
           >
-            Cancel
+            CANCEL
           </button>
           <button
             class="ms-button-wide ms-filled-button meal-button"
             :disabled="numberOfDuplicates === 0"
             @click="duplicateMeals()"
           >
-            Duplicate
+            DUPLICATE
           </button>
         </div>
       </div>

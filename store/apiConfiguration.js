@@ -38,7 +38,7 @@ export const state = () => ({
   saveCartContent: 'custom/cart/save-cart-content',
   urlPlaceOrder: 'custom/cart/create-new-order',
   baseUrl:
-    'http://localhost:8888/atlantameals/backend/public/atlanta-meal-prep/',
-  baseImgUrl: 'http://localhost:8888/',
+    'http://18.221.253.126/public/atlanta-meal-prep/',
+  baseImgUrl: 'http://18.221.253.126/',
   // baseUrl: 'https://projects.solcode.net/backend/public/atlanta-meal-prep/',
 })

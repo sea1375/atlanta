@@ -1,10 +1,7 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" style="">
     <div class="img-wrapp">
-      <img
-        src="https://atlantamealprep.com/wp-content/uploads/2020/02/AMP-2019-066.jpg"
-        class="half-divs hl-img desktop-hidden"
-      />
+      <img src="~assets/food.png" class="half-divs hl-img desktop-hidden" />
       <div class="whiter"></div>
     </div>
     <div class="half-divs">
@@ -12,10 +9,7 @@
       <preselected-menus v-if="this.$store.state.wizard.step === 2" />
       <select-meal v-else-if="this.$store.state.wizard.step === 3" />
     </div>
-    <img
-      src="https://atlantamealprep.com/wp-content/uploads/2020/02/AMP-2019-066.jpg"
-      class="half-divs hl-img mobile-hidden"
-    />
+    <img src="~assets/food.png" class="half-divs hl-img mobile-hidden" />
   </div>
 </template>
 
@@ -43,8 +37,7 @@ export default {
 <style scoped>
 .wrapper {
   width: 100%;
-  height: 75vh;
-  margin-bottom: 40px;
+  height: inherit;
 }
 
 .half-divs {
@@ -67,7 +60,7 @@ export default {
 
 @media only screen and (max-height: 800px) {
   .wrapper {
-    height: 90vh;
+    height: inherit;
   }
 }
 
